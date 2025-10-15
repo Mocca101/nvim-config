@@ -33,33 +33,13 @@ rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
 --
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
+--  :Lazy
+--    '? '... Help
+--    'q 'or ':q' ... close
 require('lazy').setup(
   {
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
-    -- NOTE: Plugins can also be added by using a table,
-    -- with the first argument being the link and the following
-    -- keys can be used to configure plugin behavior/loading/etc.
-    --
-    -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
-    --
-
-    -- Alternatively, use `config = function() ... end` for full control over the configuration.
-    -- If you prefer to call `setup` explicitly, use:
-    --    {
-    --        'lewis6991/gitsigns.nvim',
-    --        config = function()
-    --            require('gitsigns').setup({
-    --                -- Your gitsigns configuration here
-    --            })
-    --        end,
-    --    }
-    --
     -- See `:help gitsigns` to understand what the configuration keys do
     { -- Adds git related signs to the gutter, as well as utilities for managing changes
       'lewis6991/gitsigns.nvim',
@@ -137,11 +117,6 @@ require('lazy').setup(
         },
       },
     },
-
-    -- NOTE: Plugins can specify dependencies.
-    --
-    -- The dependencies are proper plugin specifications as well - anything
-    -- you do for a plugin at the top level, you can do for a dependency.
 
     { -- Fuzzy Finder (files, lsp, etc)
       'nvim-telescope/telescope.nvim',
