@@ -15,6 +15,8 @@ P.S. You can delete this when you're done too. It's your config now! :)
 require 'sets'
 require 'remap'
 require 'autocommands'
+require 'folds'
+local utils = require 'utils'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -205,6 +207,10 @@ require('lazy').setup(
         vim.keymap.set('n', '<leader>sn', function()
           builtin.find_files { cwd = vim.fn.stdpath 'config' }
         end, { desc = '[S]earch [N]eovim files' })
+
+        vim.keymap.set('n', '<leader>sp', function()
+          builtin.find_files { cwd = utils.find_closest_parent_path 'package.json' }
+        end, { desc = '[S]earch (Node) [P]roject files' })
       end,
     },
 
