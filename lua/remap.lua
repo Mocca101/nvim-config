@@ -11,10 +11,6 @@ vim.keymap.set('i', '<cr>', function()
   return '<cr>'
 end, { expr = true })
 
-vim.keymap.set('i', 'jj', '<ESC>')
-vim.keymap.set('i', 'jk', '<ESC>')
-vim.keymap.set('i', 'kk', '<ESC>')
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -48,3 +44,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+-- QOL
+-- Source/Run Lua
+vim.keymap.set('n', '<space>X', '<cmd>source %<CR>', { desc = 'Source File' })
+vim.keymap.set('n', '<space>x', ':.lua<CR>', { desc = 'Source current line' })
+vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'Source Selection' })
+
+-- Toggle Terminal
+vim.keymap.set('n', '<leader>ot', function()
+  local currentPath = vim.fn.expand '%:p:h'
+  vim.cmd 'split'
+  vim.cmd('lcd ' .. currentPath)
+  vim.cmd 'resize 10'
+  vim.cmd 'terminal'
+  vim.cmd 'startinsert'
+end, { desc = '[O]pen [T]erminal' })

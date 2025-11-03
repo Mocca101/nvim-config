@@ -74,6 +74,7 @@ return {
         if git_dir == '' then
           builtin.find_files { cwd = custom_utils.find_closest_parent_path 'package.json' }
         else
+          print('using git project for file' .. vim.fn.expand '%:p')
           builtin.git_files {
             use_file_path = true,
             show_untracked = true,
