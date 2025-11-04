@@ -41,7 +41,6 @@ require('lazy').setup(
   -- ':help lazy.nvim-🔌-plugin-spec'
   {
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
-    'rafamadriz/friendly-snippets',
 
     require 'kickstart.plugins.debug',
     require 'kickstart.plugins.autopairs',
