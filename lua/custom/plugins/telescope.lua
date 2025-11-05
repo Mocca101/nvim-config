@@ -76,7 +76,7 @@ return {
         else
           print('using git project for file' .. vim.fn.expand '%:p')
           builtin.git_files {
-            use_file_path = true,
+            cwd = custom_utils.find_closest_parent_path '.git',
             show_untracked = true,
             prompt_title = 'Pick File from relative git root.',
           }
