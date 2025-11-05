@@ -21,6 +21,19 @@ return {
     end,
   },
   { 'EdenEast/nightfox.nvim' },
+  {
+    'neanias/everforest-nvim',
+    config = function()
+      local everforrest = require 'everforest'
+      everforrest.setup {
+        background = 'hard',
+        transparent_background_level = 0,
+        italics = true,
+        disable_italic_comments = false,
+        inlay_hints_background = 'dimmed',
+      }
+    end,
+  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
