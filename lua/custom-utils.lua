@@ -44,6 +44,9 @@ find_closest_parent_path = function(target)
   return nil -- Not found
 end
 
+-- TODO: Create function to replace ^M line endings
+-- :%s/\r//
+
 return {
   find_closest_parent_path = find_closest_parent_path,
 }

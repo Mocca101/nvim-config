@@ -84,6 +84,13 @@ return {
         end
       end, {})
 
+      vim.keymap.set('n', '<leader>slp', function()
+        builtin.find_files {
+          cwd = custom_utils.find_closest_parent_path 'package.json',
+          prompt_title = 'Pick File from relative node project root.',
+        }
+      end, {})
+
       vim.keymap.set('n', '<leader>sp', function()
         builtin.live_grep {
           cwd = custom_utils.find_closest_parent_path { '.git', 'package.json' },
