@@ -14,7 +14,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 require 'sets'
 require 'remap'
 require 'autocommands'
-require 'folds'
+-- require 'folds'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -36,8 +36,8 @@ rtp:prepend(lazypath)
 -- ':Lazy'
 --  '? '... Help
 --  'q 'or ':q' ... close
+
 require('lazy').setup(
-  -- Plugin loading, sourcess & examples:
   -- ':help lazy.nvim-🔌-plugin-spec'
   {
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
@@ -74,6 +74,3 @@ require('lazy').setup(
     },
   }
 )
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
